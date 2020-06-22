@@ -8,6 +8,7 @@ VAR
     i :INTEGER = 0;
     isFloat: BOOLEAN = true;
     count :INTEGER = 0;
+    
 
 
 
@@ -47,20 +48,22 @@ BEGIN
          END_SWITCH  
          i++;
      END_WHILE
-     if(isFloat == true) {
-        //calcul the integer and decimal part 
+     ELSE 
+         isFloat = false;
+     
+     END_IF
+
+   
+   IF (isFloat == true) THEN
+       //calcul the integer and decimal part 
         WHILE (integerPart <= parseFloat(str)) DO
             integerPart := integerPart + 1;
         END_WHILE
         integerPart:= integerPart - 1;
         decimalPart:=ToInteger(str) - e
         Write("this is a valid float number it's integer part is "+integerPart+"and it's float number "+decimalPart)
-   }
-   ELSE {
-        Write("the expression is not a float number")
-   }  
-  END_IF   
-END_FOR
-
+   ELSE
+       Write("the expression is not a float number")
+   END_IF
      
 END
