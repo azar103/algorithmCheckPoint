@@ -4,6 +4,7 @@ VAR
     wordsCounter: INTEGER = 0;
     voyelsCounter : INTEGER = 0;
     charactersCounter : INTEGER = 0;
+    i : INTEGER;
 BEGIN
     Read(str)
     //count the numbers of characters
@@ -19,7 +20,7 @@ BEGIN
     END_FOR
 
     //count the nomber of voyels
-    FOR i FROM O TO charactersCounter STEP 1  DO
+    FOR i FROM 0 TO charactersCounter STEP 1  DO
         IF( str[i] == 'a' || str[i] == 'e' || str[i] == 'o' || str[i] == 'u' || str[i] == 'i' || str[i] == 'y') THEN
         voyelsCounter := voyelsCounter + 1;
     END_FOR
