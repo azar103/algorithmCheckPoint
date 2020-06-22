@@ -1,0 +1,27 @@
+ALGORITHM sentence
+VAR
+    str: STRING;
+    wordsCounter: INTEGER = 0;
+    voyelsCounter : INTEGER = 0;
+    charactersCounter : INTEGER = 0;
+BEGIN
+    Read(str)
+    //count the numbers of characters
+    REPEAT
+        charactersCounter := charactersCounter + 1
+    UNTIL (str[charactersCounter] != '.')
+
+    //count the number of Words
+    FOR i FROM 0 TO charactersCounter STEP 1  DO
+        IF (str[i] == " ") THEN
+             wordsCounter := wordsCounter + 1
+        END_IF
+    END_FOR
+
+    //count the nomber of voyels
+    FOR i FROM O TO charactersCounter STEP 1  DO
+        IF( str[i] == 'a' || str[i] == 'e' || str[i] == 'o' || str[i] == 'u' || str[i] == 'i' || str[i] == 'y') THEN
+        voyelsCounter := voyelsCounter + 1;
+    END_FOR
+    Write("the length of the sentence is "+ charactersCounter+" and the number of it's words is "+wordsCounter+" and the number of voyels is "+voyelsCounter)
+END
