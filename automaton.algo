@@ -1,0 +1,66 @@
+ALGORITHM isFloat
+VAR
+    c : CHAR;
+    state: STRING ;
+    integerPart : INTEGER = 0;
+    decimalPart : FLOAT;
+    trimedString : STRING = '';
+    i :INTEGER = 0;
+    isFloat: BOOLEAN = true;
+    count :INTEGER = 0;
+
+
+
+BEGIN
+
+   Read(str)
+  //remove the spaces from the string
+   FOR i FROM 0 TO stringLength STEP 1  DO
+       count := count + 1
+       str[count] = str[i]
+   END_FOR 
+  
+   //check if the first character is digit
+   IF (isDigit(str[0]) := true) THEN
+     //while c is digit is not equal to #
+     WHILE (c!="#" AND isFloat = true) DO
+         c := str[i];
+         SWITCH (ToInteger(c)) DO
+                    case 0 : 
+                    case 1 : 
+                    case 2 :
+                    case 3 :
+                    case 4 :
+                    case 5 :
+                    case 6 :
+                    case 7 :
+                    case 8 :
+                    case 9 :
+                    state := 'q' + i;
+                    BREAK;
+                    case '.':
+                    state := 'q' + i;
+                    CONTINUE;
+                    default : 
+                    isFloat = false;
+                    BREAK;
+         END_SWITCH  
+         i++;
+     END_WHILE
+     if(isFloat == true) {
+        //calcul the integer and decimal part 
+        WHILE (integerPart <= parseFloat(str)) DO
+            integerPart := integerPart + 1;
+        END_WHILE
+        integerPart:= integerPart - 1;
+        decimalPart:=ToInteger(str) - e
+        Write("this is a valid float number it's integer part is "+integerPart+"and it's float number "+decimalPart)
+   }
+   ELSE {
+        Write("the expression is not a float number")
+   }  
+  END_IF   
+END_FOR
+
+     
+END
